@@ -3,10 +3,10 @@ package br.com.sieve
 object AritosthenesSieve {
   
   def primesUntil(maxValue: Int) = {
-    if (maxValue < 0)
-      throw new IllegalArgumentException("negatice number not allowed")
+    val absoluteMaxValue = maxValue.abs
+    val primes = sieve((2 until absoluteMaxValue).toList)
 
-    sieve((2 until maxValue).toList)
+    if (maxValue < 0) primes.map(-1*_) else primes
   }
 
   private def sieve(numbers: Traversable[Int]): Seq[Int] = {
