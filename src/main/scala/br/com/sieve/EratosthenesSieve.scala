@@ -1,6 +1,6 @@
 package br.com.sieve
 
-object AritosthenesSieve {
+object EratosthenesSieve {
   
   def primesUntil(maxValue: Int) = {
     val absoluteMaxValue = maxValue.abs
